@@ -31,11 +31,11 @@ and open the template in the editor.
         <div class="container ">
             <form id="formPrincipal" class=" form-signin" method="GET" action="" >
                 <h2 class="form-signin-heading"> Por favor loguese</h2>
-                <input type="text" id="txtuser" name="txtuser" placeholder="USUARIO" class="form-control" required autofocus value="seguridad">
+                <input type="text" id="txtuser" name="txtuser" placeholder="USUARIO" class="form-control" required autofocus value="admin">
                 <input type="password" id="txtpass" name="txtpass" placeholder="Contraseña" class="form-control" required autofocus value="1234">
             </form>
-            <button class=" btn btn-lg btn-block btn-primary">  Restaurar Contraseña </button>
-            <button  class="btn btn-block btn-lg btn-primary " onclick="validarUser();">Aceptar </button>
+            <button class=" btn btn-lg btn-block btn-primary" onclick="mantenimiento();">  Restaurar Contraseña </button>
+            <button class="btn btn-block btn-lg btn-primary " onclick="validarUser();">Aceptar </button>
         </div>
         
         <div class="text-center"> 
@@ -66,9 +66,21 @@ and open the template in the editor.
                       document.getElementById("formPrincipal").submit();
                       break;
                     default:
-                      alert("Por favor ingrese un nombre validos");
+                      alert("Por favor ingrese un nombre valido");
                       break;
                 }
+            }
+            function mantenimiento(){
+                var nombreUser=document.getElementById("txtuser").value.toUpperCase();
+                switch (nombreUser) {
+                    case "PROPIETARIO":
+                       document.getElementById("formPrincipal").action=" nuevo_mantenimiento.html";                     
+                       document.getElementById("formPrincipal").submit();  
+                      break;
+                    default:
+                      alert("Por favor ingrese un nombre valido");
+                      break;
+                }  
             }
         </script>
     </body>

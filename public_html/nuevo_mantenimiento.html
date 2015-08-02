@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Res Humbolt</title>
+        <title>Res Humbolt Nueva Emergencia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -24,17 +24,27 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->        
     </head>
     <body >        
-        <div >
-            <h1 class="jumbotron">Conjunto Residencial Humboldt</h1>
+        <div class="jumbotron">
+            <h1 >Conjunto Residencial Humboldt</h1>
+            <h3 class="h3">Bienvenido Co Propietario</h3>
         </div>
         
         <div class="container ">
-            <form class=" form-signin" >
-                <h2 class="form-signin-heading"> Por favor loguese</h2>
-                <input type="text" id="txtuser" name="txtuser" placeholder="Usuario" class="form-control" required autofocus>
-                <input type="text" id="txtpass" name="txtpass" placeholder="Contraseña" class="form-control" required autofocus>
-                <button class=" btn btn-lg btn-block btn-primary">  Restaurar Contraseña </button>
-                <input type="submit" class="btn btn-block btn-lg btn-primary " value="Aceptar" >
+            <form id="formPrincipal" class=" form-signin" method="GET" action="bienvenida_propietario.html" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="h3">
+                           Por favor Llene los datos para el mantenimiento
+                        </label>
+                    </div>
+                    <div id="datosEmergencia" class="panel-body" >
+                        <input type="text" id="txttorre" name="txttorre" placeholder="Torre A" class="form-control"  autofocus value="">
+                        <input type="text" id="txtpiso" name="txtpiso" placeholder="16" class="form-control"  autofocus value="">
+                        <input type="text" id="txtapto" name="txtapto" placeholder="5" class="form-control"  autofocus value="">
+                        <input type="email" id="txtemail" name="txtemail" placeholder="correo@dominio.com" class="form-control"  autofocus value="">
+                    </div>
+                </div>         
+                <button  class="btn btn-block btn-lg btn-primary " >Aceptar </button>
             </form>
         </div>
         
