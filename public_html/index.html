@@ -29,13 +29,13 @@ and open the template in the editor.
         </div>
         
         <div class="container ">
-            <form class=" form-signin" >
+            <form id="formPrincipal" class=" form-signin" method="GET" action="" >
                 <h2 class="form-signin-heading"> Por favor loguese</h2>
-                <input type="text" id="txtuser" name="txtuser" placeholder="Usuario" class="form-control" required autofocus>
-                <input type="text" id="txtpass" name="txtpass" placeholder="Contraseña" class="form-control" required autofocus>
-                <button class=" btn btn-lg btn-block btn-primary">  Restaurar Contraseña </button>
-                <input type="submit" class="btn btn-block btn-lg btn-primary " value="Aceptar" >
+                <input type="text" id="txtuser" name="txtuser" placeholder="USUARIO" class="form-control" required autofocus value="propietario">
+                <input type="password" id="txtpass" name="txtpass" placeholder="Contraseña" class="form-control" required autofocus value="1234">
             </form>
+            <button class=" btn btn-lg btn-block btn-primary">  Restaurar Contraseña </button>
+            <button  class="btn btn-block btn-lg btn-primary " onclick="validarUser();">Aceptar </button>
         </div>
         
         <div class="text-center"> 
@@ -47,5 +47,29 @@ and open the template in the editor.
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
         <!--Latest compiled JavaScript-Bootstrap--> 
         <script src="js/bootstrap.js"></script>
+        <script>
+            function validarUser(){
+                var nombreUser=document.getElementById("txtuser").value.toUpperCase();
+                var nombrePass=document.getElementById("txtpass").value;
+                alert(nombreUser);
+                switch (nombreUser) {
+                    case "PROPIETARIO":
+                      document.getElementById("formPrincipal").action="bienvenida_propietario.html";
+                      document.getElementById("formPrincipal").submit();  
+                      break;
+                    case "ADMIN":
+                      document.getElementById("formPrincipal").action="bienvenida_vigilante.html";
+                      document.getElementById("formPrincipal").submit();
+                      break;
+                    case "SEGURIDAD":
+                      document.getElementById("formPrincipal").action="bienvenida_admin.html";                     
+                      document.getElementById("formPrincipal").submit();
+                      break;
+                    default:
+                      alert("Por favor ingrese un nombre validos");
+                      break;
+                }
+            }
+        </script>
     </body>
 </html>
