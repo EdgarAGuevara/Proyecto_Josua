@@ -26,7 +26,7 @@ and open the template in the editor.
     <body >        
         <div class="jumbotron">
             <h1 >Conjunto Residencial Humboldt</h1>
-            <h3 class="h3">Bienvenido Co Propietario</h3>
+            <h3 class="h3">Bienvenido Seguridad</h3>
         </div>
         
         <div class="container ">
@@ -50,7 +50,7 @@ and open the template in the editor.
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Aprobacion</th>
+                                <th>Aprobar</th>
                                 <th>#</th>
                                 <th>Nombre de Visitante</th>
                                 <th>Apellido de Visitante</th>
@@ -64,7 +64,7 @@ and open the template in the editor.
                         <tbody>
                             <tr>
                               <td>
-                                  <input type="checkbox" class="checkbox-inline" name="Aprobada1" id="Aprobada1" disabled checked>
+                                <input type="checkbox" class="checkbox-inline" name="Aprobada1" id="Aprobada1" onchange="aprobar(this.id);">
                               </td>
                               <td>1</td>
                               <td>Juan</td>
@@ -74,14 +74,15 @@ and open the template in the editor.
                               <td>Corrolla</td>
                               <td>Azul</td>
                               <td>VE12345</td>
-                            </tr><tr>
+                            </tr>
+                            <tr>
                               <td>
-                                  <input type="checkbox" class="checkbox-inline" name="Aprobada2" id="Aprobada2"   disabled>
+                                <input type="checkbox" class="checkbox-inline" name="Aprobada2" id="Aprobada2" onchange="aprobar(this.id);">
                               </td>
-                              <td>2</td>
+                              <td>1</td>
                               <td>PEPE</td>
-                              <td>Gonzalez</td>
-                              <td>V12234567</td>
+                              <td>Gonsalez</td>
+                              <td>V11234567</td>
                               <td>Toyota</td>
                               <td>Corrolla</td>
                               <td>Azul</td>
@@ -103,7 +104,7 @@ and open the template in the editor.
         <!--Latest compiled JavaScript-Bootstrap--> 
         <script src="js/bootstrap.js"></script>
         <script>
-          function mostrarLista(){
+            function mostrarLista(){
                 $('#listado').toggle(function() {
 //                   AQui para cuando sale a la vista
 //                    $('#txtmarca').requiered=true;
@@ -117,6 +118,16 @@ and open the template in the editor.
 //                    $('#txtcolor').requiered=false;
 //                    $('#txtplaca').requiered=false;
                 });
+            }
+            function aprobar(campo){
+                if ($("#"+campo).is(':checked')) {
+                    if (confirm("Aprobar Visita")) {
+                        $("#"+campo).prop('checked',true);
+                    }else{
+                        $("#"+campo).prop('checked',false);  
+                    }
+                    $("#"+campo).prop('disabled',true);
+                }
             }
         </script>
     </body>
