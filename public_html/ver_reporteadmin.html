@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Res Humbolt Listado Visitante</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+         <!--Latest compiled CSS-Bootstrap--> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+         <!--Optional theme--> 
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+<!--         Latest compiled and minified CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+         Optional theme 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->        
+    </head>
+    <body >        
+        <div class="jumbotron">
+            <h1 >Conjunto Residencial Humboldt</h1>
+            <h3 class="h3">Bienvenido Junta de Condominio</h3>
+        </div>
+        
+        <div class="container ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label class="h2">Por favor eliga una fecha para ver las visitas</label>                    
+                </div>
+                <div  class="panel-body" >
+                    <input type="date" id="txtdia" name="txtdia" class="form-control lg" required value="">
+                    <button  class="btn btn-block  btn-primary " onclick="mostrarLista();">Ver </button>
+                </div>
+                
+            </div>
+            
+            <div id="listado" class="panel panel-default"  style="display: none">
+                <div class="panel-heading">
+                    <label class="h2">Visitas para la fecha seleccionada</label>   
+                </div>
+                <div  class="panel-body">
+                    <!-- Table -->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Aprobacion</th>
+                                <th>#</th>
+                                <th>Nombre de Visitante</th>
+                                <th>Apellido de Visitante</th>
+                                <th>Cedula</th>
+                                <th>Marca de Automovil</th>
+                                <th>Modelo de Automovil</th>
+                                <th>Color de Automovil</th>
+                                <th>Placa de Automovil</th>
+                                <th>Torre</th>
+                                <th>Piso</th>
+                                <th>Apto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>
+                                  <input type="checkbox" class="checkbox-inline" name="Aprobada1" id="Aprobada1" disabled checked>
+                              </td>
+                              <td>1</td>
+                              <td>Juan</td>
+                              <td>Linares</td>
+                              <td>V11234567</td>
+                              <td>Toyota</td>
+                              <td>Corrolla</td>
+                              <td>Azul</td>
+                              <td>VE12345</td>
+                              <td>Torre A</td>
+                              <td>16</td>
+                              <td>4</td>
+                            </tr><tr>
+                              <td>
+                                  <input type="checkbox" class="checkbox-inline" name="Aprobada2" id="Aprobada2"   disabled>
+                              </td>
+                              <td>2</td>
+                              <td>PEPE</td>
+                              <td>Gonzalez</td>
+                              <td>V12234567</td>
+                              <td>Toyota</td>
+                              <td>Corrolla</td>
+                              <td>Azul</td>
+                              <td>VE12345</td>
+                              <td>Torre A</td>
+                              <td>16</td>
+                              <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center"> 
+            
+        </div>
+        <!-- Latest compiled and minified JQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+        <!--Latest compiled JavaScript-Bootstrap--> 
+        <script src="js/bootstrap.js"></script>
+        <script>
+          function mostrarLista(){
+                $('#listado').toggle(function() {
+//                   AQui para cuando sale a la vista
+//                    $('#txtmarca').requiered=true;
+//                    $('#txtmodelo').requiered=true;
+//                    $('#txtcolor').requiered=true;
+//                    $('#txtplaca').requiered=true;
+                }, function() {
+//                    Aqui para cuando se oculta
+//                    $('#txtmarca').requiered=false;
+//                    $('#txtmodelo').requiered=false;
+//                    $('#txtcolor').requiered=false;
+//                    $('#txtplaca').requiered=false;
+                });
+            }
+        </script>
+    </body>
+</html>

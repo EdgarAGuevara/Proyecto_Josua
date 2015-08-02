@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Res Humbolt Nueva Emergencia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+         <!--Latest compiled CSS-Bootstrap--> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+         <!--Optional theme--> 
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+<!--         Latest compiled and minified CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+         Optional theme 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->        
+    </head>
+    <body >        
+        <div class="jumbotron">
+            <h1 >Conjunto Residencial Humboldt</h1>
+            <h3 class="h3">Bienvenido Vigilancia</h3>
+        </div>
+        
+        <div class="container ">
+            <form id="formPrincipal" class=" form-signin" method="GET" action="bienvenida_vigilante.html" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="h3">
+                           Por favor Llene los datos de la emergencia
+                        </label>
+                    </div>
+                    <div id="datosEmergencia" class="panel-body" >
+                        <select id="cmbtipoemergencia" name="cmbtipoemergencia" class="form-control" >
+                            <option>...</option>
+                            <option>Bomberos</option>
+                            <option>Ambulancia</option>
+                            <option>Policia</option>
+                            <option>Forence</option>
+                        </select>
+                        <input type="text" id="txttorre" name="txttorre" placeholder="Torre A" class="form-control"  autofocus value="">
+                        <input type="text" id="txtpiso" name="txtpiso" placeholder="16" class="form-control"  autofocus value="">
+                        <input type="text" id="txtapto" name="txtapto" placeholder="5" class="form-control"  autofocus value="">
+                    </div>
+                </div>         
+                <button  class="btn btn-block btn-lg btn-primary " >Aceptar </button>
+            </form>
+        </div>
+        
+        <div class="text-center"> 
+            
+        </div>
+        <!-- Latest compiled and minified JQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+        <!--Latest compiled JavaScript-Bootstrap--> 
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>

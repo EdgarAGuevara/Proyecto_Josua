@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Res Humbolt</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+         <!--Latest compiled CSS-Bootstrap--> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+         <!--Optional theme--> 
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+<!--         Latest compiled and minified CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+         Optional theme 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->        
+    </head>
+    <body >        
+        <div class="jumbotron">
+            <h1 >Conjunto Residencial Humboldt</h1>
+        </div>
+        
+        <div class="container ">
+            <form id="formPrincipal" class=" form-signin" method="GET" action="" >
+                <h2 class="form-signin-heading"> Por favor loguese</h2>
+                <input type="text" id="txtuser" name="txtuser" placeholder="USUARIO" class="form-control" required autofocus value="">
+                <input type="password" id="txtpass" name="txtpass" placeholder="Contraseña" class="form-control" required autofocus value="">
+            </form>
+            <button class=" btn btn-lg btn-block btn-primary" onclick="mantenimiento();">  Restaurar Contraseña </button>
+            <button class="btn btn-block btn-lg btn-primary " onclick="validarUser();">Aceptar </button>
+        </div>
+        
+        <div class="text-center"> 
+            
+        </div>
+        <!-- Latest compiled and minified JQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+        <!--Latest compiled JavaScript-Bootstrap--> 
+        <script src="js/bootstrap.js"></script>
+        <script>
+            function validarUser(){
+                var nombreUser=document.getElementById("txtuser").value.toUpperCase();
+                var nombrePass=document.getElementById("txtpass").value;
+//                alert(nombreUser);
+                switch (nombreUser) {
+                    case "PROPIETARIO":
+                      document.getElementById("formPrincipal").action="bienvenida_propietario.html";
+                      document.getElementById("formPrincipal").submit();  
+                      break;
+                    case "ADMIN":
+                      document.getElementById("formPrincipal").action="bienvenida_admin.html";
+                      document.getElementById("formPrincipal").submit();
+                      break;
+                    case "SEGURIDAD":
+                      document.getElementById("formPrincipal").action=" bienvenida_vigilante.html";                     
+                      document.getElementById("formPrincipal").submit();
+                      break;
+                    default:
+                      alert("Por favor ingrese un nombre valido");
+                      break;
+                }
+            }
+            function mantenimiento(){
+                var nombreUser=document.getElementById("txtuser").value.toUpperCase();
+                switch (nombreUser) {
+                    case "PROPIETARIO":
+                       document.getElementById("formPrincipal").action=" nuevo_mantenimiento.html";                     
+                       document.getElementById("formPrincipal").submit();  
+                      break;
+                    default:
+                      alert("Por favor ingrese un nombre valido");
+                      break;
+                }  
+            }
+        </script>
+    </body>
+</html>

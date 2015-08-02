@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Res HumboltNueva Visita</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+         <!--Latest compiled CSS-Bootstrap--> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+         <!--Optional theme--> 
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+<!--         Latest compiled and minified CSS 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+         Optional theme 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->        
+    </head>
+    <body >        
+         <div class="jumbotron">
+            <h1 >Conjunto Residencial Humboldt</h1>
+            <h3 class="h3">Bienvenido Co Propietario</h3>
+        </div>
+        
+        <div class="container ">
+            <form id="formPrincipal" class=" form-signin" method="GET" action="bienvenida_propietario.html" >
+                <h2 class="form-signin-heading"> Por favor Ingrese Datos del visitante</h2>
+                <input type="text" id="txtnombrevisi" name="txtnombrevisi" placeholder="Juan" class="form-control" required autofocus value="">
+                <input type="text" id="txtapellidovisi" name="txtapellidovisi" placeholder="Gonzalez" class="form-control" required autofocus value="">
+                <input type="text" id="txtcedula" name="txtcedula" placeholder="V11234567" class="form-control" required autofocus value="">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="h3">
+                            <input type="checkbox" class="checkbox-inline" name="conAuto" id="conAuto" value="" onchange="mostrarDatosAuto();">
+                            El visitante posee automovil
+                        </label>
+                    </div>
+                    <div id="datosAuto" class="panel-body" style="display: none">
+                        <input type="text" id="txtmarca" name="txtmarca" placeholder="Toyota" class="form-control"  autofocus value="">
+                        <input type="text" id="txtmodelo" name="txtmodelo" placeholder="Corrolla" class="form-control"  autofocus value="">
+                        <input type="text" id="txtcolor" name="txtcolor" placeholder="Azul" class="form-control"  autofocus value="">
+                        <input type="text" id="txtplaca" name="txtplaca" placeholder="VE1234" class="form-control"  autofocus value="">
+                    </div>
+                </div>         
+                <button  class="btn btn-block btn-lg btn-primary " >Aceptar </button>
+            </form>
+           
+        </div>
+        
+        <div class="text-center"> 
+            
+        </div>
+        <!-- Latest compiled and minified JQuery -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+        <!--Latest compiled JavaScript-Bootstrap--> 
+        <script src="js/bootstrap.js"></script>
+        <script>
+            function mostrarDatosAuto(){
+                $('#datosAuto').toggle(function() {
+//                   AQui para cuando sale a la vista
+//                    $('#txtmarca').requiered=true;
+//                    $('#txtmodelo').requiered=true;
+//                    $('#txtcolor').requiered=true;
+//                    $('#txtplaca').requiered=true;
+                }, function() {
+//                    Aqui para cuando se oculta
+//                    $('#txtmarca').requiered=false;
+//                    $('#txtmodelo').requiered=false;
+//                    $('#txtcolor').requiered=false;
+//                    $('#txtplaca').requiered=false;
+                });
+            }
+        </script>
+    </body>
+</html>
